@@ -1,7 +1,7 @@
-cmake_minimum_required (VERSION 3.0)
-project(Open62541Cpp)
+cmake_minimum_required (VERSION 3.5)
+project(Open62541Cpp VERSION 1.0)
 
-set(OPEN62541_VERSION "0.1")
+set(OPEN62541_VERSION "1.0")
 set (CMAKE_CXX_STANDARD 14)
 
 
@@ -38,10 +38,9 @@ target_include_directories(Open62541Cpp INTERFACE
 
 
 include(GenerateExportHeader)
-set(OPEN62541_CPP_VERSION 0.1.0)
 
-set_property(TARGET Open62541Cpp PROPERTY VERSION ${OPEN62541_CPP_VERSION})
-set_property(TARGET Open62541Cpp PROPERTY SOVERSION 3)
+set_property(TARGET Open62541Cpp PROPERTY VERSION ${Open62541Cpp_VERSION})
+set_property(TARGET Open62541Cpp PROPERTY SOVERSION ${Open62541Cpp_VERSION_MAJOR})
 
 
 # export library (either static or shared depending on BUILD_SHARED_LIBS)
@@ -63,7 +62,7 @@ set(target_install_dest_name "${cmake_configfile_install}/Open62541CppTargets.cm
 include(CMakePackageConfigHelpers)
 write_basic_package_version_file(
   "${CMAKE_CURRENT_BINARY_DIR}/Open62541CppConfigVersion.cmake"
-  VERSION ${OPEN62541_CPP_VERSION}
+  VERSION ${Open62541Cpp_VERSION}
   COMPATIBILITY AnyNewerVersion
 )
 
