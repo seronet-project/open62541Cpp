@@ -12,7 +12,7 @@
 
 #include "UA_Variant.hpp"
 
-namespace OPEN_65241_CPP_NAMESPACE {
+namespace open62541Cpp {
 class UA_ArrayOfVariant {
  public:
   UA_ArrayOfVariant();
@@ -25,7 +25,7 @@ class UA_ArrayOfVariant {
   ::UA_Variant *Variants;
   ::size_t VariantsSize;
 
-  open62541::UA_Variant operator[](UA_UInt32 i);
+  open62541Cpp::UA_Variant operator[](UA_UInt32 i);
 
 };
 

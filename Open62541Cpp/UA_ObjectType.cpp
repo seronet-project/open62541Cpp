@@ -9,7 +9,7 @@
 #include "UA_ObjectType.hpp"
 #include <open62541/types_generated_handling.h>
 
-namespace OPEN_65241_CPP_NAMESPACE
+namespace open62541Cpp
 {
 
 	UA_ObjectType::UA_ObjectType() : Attributes(UA_ObjectTypeAttributes_new())

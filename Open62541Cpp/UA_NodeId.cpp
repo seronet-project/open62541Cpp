@@ -18,7 +18,7 @@ bool mem_less(void *p1, std::size_t size1, void *p2, std::size_t size2) {
   return memcmp(p1, p2, size1) < 0;
 }
 
-namespace OPEN_65241_CPP_NAMESPACE {
+namespace open62541Cpp {
 
 UA_NodeId::UA_NodeId() : NodeId(UA_NodeId_new()) {
   UA_NodeId_init(NodeId);

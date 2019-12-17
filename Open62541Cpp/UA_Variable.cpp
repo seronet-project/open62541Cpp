@@ -9,7 +9,7 @@
 #include "UA_Variable.hpp"
 #include <open62541/types_generated_handling.h>
 
-namespace OPEN_65241_CPP_NAMESPACE {
+namespace open62541Cpp {
 
 	UA_Variable::UA_Variable() : Attributes(UA_VariableAttributes_new())
 	{

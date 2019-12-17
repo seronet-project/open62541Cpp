@@ -12,7 +12,7 @@
 #include "Exceptions/OpcUaErrorException.hpp"
 #include <open62541/types_generated_handling.h>
 
-namespace OPEN_65241_CPP_NAMESPACE {
+namespace open62541Cpp {
 
 UA_ArrayOfArgument::UA_ArrayOfArgument() : arguments(nullptr), arraySize(0) {
 }
@@ -54,7 +54,7 @@ UA_ArrayOfArgument::~UA_ArrayOfArgument() {
 UA_Argument UA_ArrayOfArgument::operator[](UA_UInt32 i) {
   assert(i >= 0 && i < arraySize);
 
-  return open62541::UA_Argument(&(arguments[i]));
+  return open62541Cpp::UA_Argument(&(arguments[i]));
 }
 
 }

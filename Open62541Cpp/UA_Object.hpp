@@ -14,7 +14,7 @@
 #include <open62541/types_generated.h>
 
 
-namespace OPEN_65241_CPP_NAMESPACE
+namespace open62541Cpp
 {
 	///TODO? Rename to ObjectAttributes?
 	class UA_Object

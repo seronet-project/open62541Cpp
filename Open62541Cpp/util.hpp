@@ -10,8 +10,6 @@
 #ifndef UTIL_HPP
 #define UTIL_HPP
 
-#define OPEN_65241_CPP_NAMESPACE open62541
-
 ///TODO check for different compiler
 #ifdef _DEBUG
 #define OPEN62541_DEBUG

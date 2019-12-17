@@ -9,7 +9,7 @@
 
 #pragma once
 #include <stdexcept>
-namespace OPEN_65241_CPP_NAMESPACE {
+namespace open62541Cpp {
 namespace Exceptions {
 
 class AbstractionLayerException :

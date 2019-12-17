@@ -13,7 +13,7 @@
 #include <open62541/types.h>
 #include <string>
 
-namespace OPEN_65241_CPP_NAMESPACE {
+namespace open62541Cpp {
 
 class UA_NodeId {
  public:

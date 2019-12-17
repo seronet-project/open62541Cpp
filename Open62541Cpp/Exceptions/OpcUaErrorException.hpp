@@ -13,7 +13,7 @@
 
 #include "AbstractionLayerException.hpp"
 
-namespace OPEN_65241_CPP_NAMESPACE {
+namespace open62541Cpp {
 namespace Exceptions {
 
 class OpcUaErrorException :
@@ -30,5 +30,5 @@ class OpcUaErrorException :
 
 
 }  // namespace Exceptions
-}  // namespace OPEN_65241_CPP_NAMESPACE
+}  // namespace open62541Cpp
 

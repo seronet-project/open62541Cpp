@@ -10,7 +10,7 @@
 #include "UA_Argument.hpp"
 #include <open62541/types_generated_handling.h>
 
-namespace OPEN_65241_CPP_NAMESPACE {
+namespace open62541Cpp {
 UA_Argument::UA_Argument() {
   argument = ::UA_Argument_new();
   ::UA_Argument_init(argument);

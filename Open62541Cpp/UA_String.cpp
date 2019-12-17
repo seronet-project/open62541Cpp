@@ -9,7 +9,7 @@
 #include "UA_String.hpp"
 #include <open62541/types_generated_handling.h>
 
-namespace OPEN_65241_CPP_NAMESPACE {
+namespace open62541Cpp {
 UA_String::UA_String() {
   String = UA_String_new();
   UA_String_init(String);

@@ -12,7 +12,7 @@
 
 #include "OpcUaErrorException.hpp"
 
-namespace OPEN_65241_CPP_NAMESPACE {
+namespace open62541Cpp {
 namespace Exceptions {
 
 OpcUaErrorException::OpcUaErrorException(UA_StatusCode UaStatusCode, const std::string &msg)
@@ -32,5 +32,5 @@ std::string OpcUaErrorException::generateErrorMsg(UA_StatusCode statusCode, cons
 }
 
 }  // namespace Exceptions
-}  // namespace OPEN_65241_CPP_NAMESPACE
+}  // namespace open62541Cpp
 

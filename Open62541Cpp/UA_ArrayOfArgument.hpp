@@ -13,7 +13,7 @@
 
 #include "UA_Argument.hpp"
 
-namespace OPEN_65241_CPP_NAMESPACE {
+namespace open62541Cpp {
 class UA_ArrayOfArgument {
  public:
 
@@ -27,6 +27,6 @@ class UA_ArrayOfArgument {
   ::UA_Argument *arguments;
   ::size_t arraySize;
 
-  open62541::UA_Argument operator[](UA_UInt32 i);
+  open62541Cpp::UA_Argument operator[](UA_UInt32 i);
 };
 }  // end OPEN_62541_CPP_NAMESPACE

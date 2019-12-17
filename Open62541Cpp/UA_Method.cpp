@@ -9,7 +9,7 @@
 #include "UA_Method.hpp"
 #include <open62541/types_generated_handling.h>
 
-namespace OPEN_65241_CPP_NAMESPACE
+namespace open62541Cpp
 {
 
 	UA_Method::UA_Method(): Attributes(UA_MethodAttributes_new())

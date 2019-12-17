@@ -12,7 +12,7 @@
 
 #include <open62541/types_generated_handling.h>
 
-namespace OPEN_65241_CPP_NAMESPACE {
+namespace open62541Cpp {
 
 UA_ArrayOfVariant::UA_ArrayOfVariant() : Variants(nullptr), VariantsSize(0) {
 }
@@ -54,7 +54,7 @@ UA_ArrayOfVariant::~UA_ArrayOfVariant() {
 UA_Variant UA_ArrayOfVariant::operator[](UA_UInt32 i) {
   assert(i >= 0 && i < VariantsSize);
 
-  return open62541::UA_Variant(&(Variants[i]));
+  return open62541Cpp::UA_Variant(&(Variants[i]));
 }
 
 }

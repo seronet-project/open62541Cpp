@@ -13,7 +13,7 @@
 #include <open62541/types.h>
 #include <open62541/types_generated.h>
 
-namespace OPEN_65241_CPP_NAMESPACE
+namespace open62541Cpp
 {
 
 	class UA_Variable

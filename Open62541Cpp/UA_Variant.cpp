@@ -9,7 +9,7 @@
 #include "UA_Variant.hpp"
 #include <open62541/types_generated_handling.h>
 
-namespace OPEN_65241_CPP_NAMESPACE
+namespace open62541Cpp
 {
 	UA_Variant::UA_Variant()
 	{
