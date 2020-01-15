@@ -1,7 +1,6 @@
 cmake_minimum_required (VERSION 3.0)
 project(Open62541Cpp)
 
-set(OPEN62541_VERSION "0.1")
 set (CMAKE_CXX_STANDARD 14)
 
 
@@ -21,10 +20,13 @@ set(SRC_FILES
 		${PRJ_DIR}/UA_String.cpp
 		${PRJ_DIR}/UA_Variant.cpp
 		${PRJ_DIR}/UA_DataValue.cpp
-        ${PRJ_DIR}/UA_Argument.cpp
-        ${PRJ_DIR}/UA_ArrayOfArgument.cpp
+		${PRJ_DIR}/UA_Argument.cpp
+		${PRJ_DIR}/UA_ArrayOfArgument.cpp
+		${PRJ_DIR}/UA_BrowsePath.cpp
+		${PRJ_DIR}/UA_RelativPathBase.cpp
+		${PRJ_DIR}/UA_RelativPathElement.cpp
 		Open62541Cpp/Exceptions/OpcUaErrorException.cpp
-        )
+		)
 
 
 add_library(Open62541Cpp ${SRC_FILES})
