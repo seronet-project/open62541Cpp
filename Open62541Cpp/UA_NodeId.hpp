@@ -30,6 +30,9 @@ class UA_NodeId {
   explicit UA_NodeId(const ::UA_NodeId nodeId);
   UA_NodeId(const UA_NodeId &other);
 
+  // Move constructor
+  UA_NodeId(UA_NodeId &&other);
+
   UA_NodeId &operator=(const ::UA_NodeId &other);
   UA_NodeId &operator=(const UA_NodeId &other);
 

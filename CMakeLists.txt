@@ -25,6 +25,7 @@ set(SRC_FILES
 		${PRJ_DIR}/UA_BrowsePath.cpp
 		${PRJ_DIR}/UA_RelativPathBase.cpp
 		${PRJ_DIR}/UA_RelativPathElement.cpp
+		${PRJ_DIR}/UA_QualifiedName.cpp
 		Open62541Cpp/Exceptions/OpcUaErrorException.cpp
 		)
 

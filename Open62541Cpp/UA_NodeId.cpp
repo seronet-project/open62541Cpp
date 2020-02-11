@@ -100,8 +100,11 @@ bool UA_NodeId::operator<(const UA_NodeId &other) const {
 }
 
 UA_NodeId::~UA_NodeId() {
-  UA_NodeId_deleteMembers(NodeId);
-  UA_NodeId_delete(NodeId);
+  if(NodeId != nullptr)
+  {
+    UA_NodeId_deleteMembers(NodeId);
+    UA_NodeId_delete(NodeId);
+  }
 }
 UA_NodeId::operator std::string() const {
   UA_String strNodeId = UA_STRING_NULL;
@@ -115,6 +118,11 @@ UA_NodeId UA_NodeId::FromConstNodeId(const ::UA_NodeId *nodeId) {
   ::UA_NodeId *dst = UA_NodeId_new();
   UA_NodeId_copy(nodeId, dst);
   return UA_NodeId(dst, false);
+}
+
+UA_NodeId::UA_NodeId(UA_NodeId &&other) {
+  NodeId = other.NodeId;
+  other.NodeId = nullptr;
 }
 
 std::ostream& operator<< (std::ostream& stream, const UA_NodeId& nodeId)
