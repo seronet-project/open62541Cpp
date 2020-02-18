@@ -16,9 +16,13 @@ class UA_QualifiedName {
   ~UA_QualifiedName();
   UA_QualifiedName(UA_UInt16 nsIndex, const std::string &name);
 
+  // Do a copy
+  explicit UA_QualifiedName(::UA_QualifiedName *pQualifiedName);
   /// \todo implement
   UA_QualifiedName(const UA_QualifiedName &other) = delete;
   ::UA_QualifiedName *QualifiedName = nullptr;
+
+  operator std::string() const;
 };
 
 }

@@ -19,6 +19,6 @@ class UA_BrowsePath {
   ~UA_BrowsePath();
   UA_BrowsePath(const UA_BrowsePath &other);
   UA_BrowsePath(const ::UA_NodeId startNodeId, std::list<UA_RelativPathElement> pathElements);
-
+  operator std::string() const;
 };
 }
