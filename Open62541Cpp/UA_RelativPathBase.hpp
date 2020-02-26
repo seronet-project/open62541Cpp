@@ -18,5 +18,6 @@ class UA_RelativPathBase {
 
   std::list<UA_RelativPathElement> operator()(const UA_RelativPathElement &el) const;
   std::list<UA_RelativPathElement> operator()(const std::list<UA_RelativPathElement> &els) const;
+  std::list<UA_RelativPathElement> operator()() const;
 };
 }
