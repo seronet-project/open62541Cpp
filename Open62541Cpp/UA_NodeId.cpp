@@ -108,7 +108,7 @@ UA_NodeId::~UA_NodeId() {
 }
 UA_NodeId::operator std::string() const {
   UA_String strNodeId = UA_STRING_NULL;
-  UA_NodeId_toString(NodeId, &strNodeId);
+  UA_NodeId_print(NodeId, &strNodeId);
   std::string ret (strNodeId.data, strNodeId.data + strNodeId.length);
   UA_String_deleteMembers(&strNodeId);
   return ret;
