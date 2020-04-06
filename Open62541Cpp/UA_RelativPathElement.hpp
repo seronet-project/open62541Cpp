@@ -10,10 +10,12 @@
 #include <open62541/types_generated.h>
 #include <string>
 
-namespace open62541Cpp {
-class UA_RelativPathElement {
+namespace open62541Cpp
+{
+class UA_RelativPathElement
+{
+public:
   UA_RelativPathElement() = default;
- public:
   ::UA_RelativePathElement *RelativePathElement = nullptr;
   ~UA_RelativPathElement();
 
@@ -21,10 +23,11 @@ class UA_RelativPathElement {
 
   UA_RelativPathElement(const UA_RelativPathElement &other);
 
-  UA_RelativPathElement(UA_UInt16 nsIndex,
-                        std::string name,
-                        const ::UA_NodeId referenceTypeId = HierarchicalReferences,
-                        bool includeSubtypes = true,
-                        bool isInverse = false);
+  UA_RelativPathElement(
+      UA_UInt16 nsIndex,
+      std::string name,
+      const ::UA_NodeId referenceTypeId = HierarchicalReferences,
+      bool includeSubtypes = true,
+      bool isInverse = false);
 };
-}
+} // namespace open62541Cpp
