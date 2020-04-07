@@ -31,6 +31,20 @@ UA_RelativPathElement::UA_RelativPathElement(const UA_RelativPathElement &other)
     UA_RelativePathElement_copy(other.RelativePathElement, RelativePathElement);
   }
 }
+
+UA_RelativPathElement& UA_RelativPathElement::operator=(const UA_RelativPathElement& other)
+{
+  if(other.RelativePathElement != nullptr)
+  {
+    if(RelativePathElement == nullptr)
+    {
+      RelativePathElement = UA_RelativePathElement_new();
+    }
+    UA_RelativePathElement_copy(other.RelativePathElement, RelativePathElement);
+  }
+  return *this;
+}
+
 UA_RelativPathElement::UA_RelativPathElement(
     UA_UInt16 nsIndex,
     std::string name,

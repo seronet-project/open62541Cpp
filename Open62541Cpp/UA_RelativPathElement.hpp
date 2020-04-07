@@ -22,6 +22,7 @@ public:
   static const ::UA_NodeId HierarchicalReferences;
 
   UA_RelativPathElement(const UA_RelativPathElement &other);
+  UA_RelativPathElement& operator=(const UA_RelativPathElement& other);
 
   UA_RelativPathElement(
       UA_UInt16 nsIndex,
