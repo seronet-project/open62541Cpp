@@ -30,6 +30,10 @@ UA_QualifiedName::UA_QualifiedName(::UA_QualifiedName *pQualifiedName)
   UA_copy(pQualifiedName, QualifiedName, &UA_TYPES[UA_TYPES_QUALIFIEDNAME]);
 }
 
+UA_QualifiedName::UA_QualifiedName(const UA_QualifiedName &other) : UA_QualifiedName(other.QualifiedName)
+{
+}
+
 UA_QualifiedName::operator std::string() const
 {
 

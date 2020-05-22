@@ -5,7 +5,7 @@
 ///
 
 #pragma once
-#include <Open62541Cpp/UA_String.hpp>
+#include "UA_String.hpp"
 #include <open62541/types.h>
 #include <open62541/types_generated.h>
 #include <string>
