@@ -14,7 +14,10 @@ namespace open62541Cpp
 
 UA_QualifiedName::~UA_QualifiedName()
 {
-  UA_QualifiedName_delete(QualifiedName);
+  if (QualifiedName != nullptr)
+  {
+    UA_QualifiedName_delete(QualifiedName);
+  }
 }
 
 UA_QualifiedName::UA_QualifiedName(UA_UInt16 nsIndex, const std::string &name)
@@ -27,11 +30,50 @@ UA_QualifiedName::UA_QualifiedName(UA_UInt16 nsIndex, const std::string &name)
 UA_QualifiedName::UA_QualifiedName(::UA_QualifiedName *pQualifiedName)
 {
   QualifiedName = UA_QualifiedName_new();
-  UA_copy(pQualifiedName, QualifiedName, &UA_TYPES[UA_TYPES_QUALIFIEDNAME]);
+  UA_QualifiedName_init(QualifiedName);
+  UA_QualifiedName_copy(pQualifiedName, QualifiedName);
+}
+
+UA_QualifiedName::UA_QualifiedName(UA_QualifiedName &&other)
+{
+  QualifiedName = other.QualifiedName;
+  other.QualifiedName = nullptr;
 }
 
 UA_QualifiedName::UA_QualifiedName(const UA_QualifiedName &other) : UA_QualifiedName(other.QualifiedName)
 {
+}
+
+UA_QualifiedName &UA_QualifiedName::operator=(const UA_QualifiedName &other)
+{
+  if (other.QualifiedName == nullptr)
+  {
+    if (QualifiedName != nullptr)
+    {
+      UA_QualifiedName_delete(QualifiedName);
+      QualifiedName = nullptr;
+      return *this;
+    }
+  }
+  if (QualifiedName == nullptr)
+  {
+    QualifiedName = UA_QualifiedName_new();
+    UA_QualifiedName_init(QualifiedName);
+  }
+
+  UA_QualifiedName_copy(other.QualifiedName, QualifiedName);
+  return *this;
+}
+
+UA_QualifiedName &UA_QualifiedName::operator=(UA_QualifiedName &&other)
+{
+  if (QualifiedName != nullptr)
+    {
+      UA_QualifiedName_delete(QualifiedName);
+    }
+    QualifiedName = other.QualifiedName;
+    other.QualifiedName = nullptr;
+    return *this;
 }
 
 UA_QualifiedName::operator std::string() const

@@ -18,9 +18,13 @@ class UA_QualifiedName {
 
   // Do a copy
   explicit UA_QualifiedName(::UA_QualifiedName *pQualifiedName);
-  /// \todo implement
   UA_QualifiedName(const UA_QualifiedName &other);
+  UA_QualifiedName(UA_QualifiedName && other);
+
   ::UA_QualifiedName *QualifiedName = nullptr;
+
+  UA_QualifiedName &operator=(const UA_QualifiedName &other);
+  UA_QualifiedName &operator=(UA_QualifiedName &&other);
 
   operator std::string() const;
 };

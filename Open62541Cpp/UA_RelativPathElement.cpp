@@ -23,6 +23,7 @@ UA_RelativPathElement::~UA_RelativPathElement()
     UA_RelativePathElement_delete(RelativePathElement);
   }
 }
+
 UA_RelativPathElement::UA_RelativPathElement(const UA_RelativPathElement &other)
 {
   if(other.RelativePathElement != nullptr)
@@ -42,6 +43,12 @@ UA_RelativPathElement& UA_RelativPathElement::operator=(const UA_RelativPathElem
     }
     UA_RelativePathElement_copy(other.RelativePathElement, RelativePathElement);
   }
+  else if(RelativePathElement != nullptr)
+  {
+    UA_RelativePathElement_delete(RelativePathElement);
+    RelativePathElement = nullptr;
+  }
+
   return *this;
 }
 

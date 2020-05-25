@@ -40,6 +40,9 @@ target_include_directories(Open62541Cpp INTERFACE
 		$<INSTALL_INTERFACE:include> )
 
 
+add_subdirectory(tests)
+include(CTest)
+
 include(GenerateExportHeader)
 set(OPEN62541_CPP_VERSION 0.1.0)
 
