@@ -39,6 +39,7 @@ class UA_NodeId {
   //Comparing for mapping as key value
   bool operator<(const ::UA_NodeId &other) const;
   bool operator<(const UA_NodeId &other) const;
+  bool operator ==(const UA_NodeId &other) const;
 
   operator std::string() const;
 

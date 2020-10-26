@@ -99,6 +99,11 @@ bool UA_NodeId::operator<(const UA_NodeId &other) const {
   return this->operator<(*(other.NodeId));
 }
 
+
+bool UA_NodeId::operator ==(const UA_NodeId &other) const {
+  return UA_NodeId_equal(this->NodeId,other.NodeId);
+}
+
 UA_NodeId::~UA_NodeId() {
   if(NodeId != nullptr)
   {
