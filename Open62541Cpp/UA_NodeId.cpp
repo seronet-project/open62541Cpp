@@ -67,32 +67,7 @@ UA_NodeId &UA_NodeId::operator=(const UA_NodeId &other) {
 }
 
 bool UA_NodeId::operator<(const ::UA_NodeId &other) const {
-  UA_NodeIdType thisType = this->NodeId->identifierType;
-  UA_NodeIdType otherType = other.identifierType;
-
-  if (thisType != otherType) {
-    return this->NodeId->identifierType < other.identifierType;
-  } else {
-    switch (thisType) {
-      case (UA_NODEIDTYPE_NUMERIC): return this->NodeId->identifier.numeric < other.identifier.numeric;
-      case (UA_NODEIDTYPE_STRING):
-        return mem_less(
-            this->NodeId->identifier.string.data, this->NodeId->identifier.string.length,
-            other.identifier.string.data, other.identifier.string.length
-        );
-      case (UA_NODEIDTYPE_GUID):
-        return memcmp(
-            &this->NodeId->identifier.guid, &other.identifier.guid, sizeof(decltype(other.identifier.guid))
-        );
-      case (UA_NODEIDTYPE_BYTESTRING):
-        mem_less(
-            this->NodeId->identifier.byteString.data, this->NodeId->identifier.byteString.length,
-            other.identifier.byteString.data, other.identifier.byteString.length
-        );
-    }
-    ///\TODO throw exception, unhandeled case
-    return false;
-  }
+  return UA_NodeId_order(NodeId, &other) == UA_Order::UA_ORDER_LESS;
 }
 
 bool UA_NodeId::operator<(const UA_NodeId &other) const {
