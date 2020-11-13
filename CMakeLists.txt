@@ -1,10 +1,10 @@
 cmake_minimum_required (VERSION 3.0)
 project(Open62541Cpp)
 
-set (CMAKE_CXX_STANDARD 14)
+set (CMAKE_CXX_STANDARD 17)
 
 
-option(CMAKE_POSITION_INDEPENDENT_CODE "Compile with position independent code" ON )
+#option(CMAKE_POSITION_INDEPENDENT_CODE "Compile with position independent code" ON )
 
 find_package(open62541 REQUIRED)
 

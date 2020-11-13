@@ -14,6 +14,7 @@
 #include "util.hpp"
 #include <open62541/types.h>
 #include <string>
+#include <ostream>
 
 namespace open62541Cpp {
 

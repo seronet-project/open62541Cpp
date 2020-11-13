@@ -51,12 +51,6 @@ inline ::UA_String *UA_Variant::getDataAs() {
 #ifdef OPEN62541_DEBUG
 #define TYPE_CHECKED_GET_DATA_AS(type, UA_TYPE_INDEX) template <> inline type * UA_Variant::getDataAs() {assert(is_a(&UA_TYPES[UA_TYPE_INDEX])); return static_cast<type*>(Variant->data);}
 
-template <>
-inline ::UA_String * UA_Variant::getDataAs()
-{
-    assert(is_a(&UA_TYPES[UA_TYPES_STRING]));
-    return static_cast<::UA_String*>(Variant->data);
-}
 
 TYPE_CHECKED_GET_DATA_AS(::UA_Int16, UA_TYPES_INT16)
 TYPE_CHECKED_GET_DATA_AS(::UA_Int32, UA_TYPES_INT32)

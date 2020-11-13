@@ -10,10 +10,7 @@
 #include <open62541/types_generated_handling.h>
 namespace open62541Cpp
 {
-const UA_NodeId UA_RelativPathElement::HierarchicalReferences{
-    .namespaceIndex = 0,
-    .identifierType = UA_NODEIDTYPE_NUMERIC,
-    .identifier = {.numeric = UA_NS0ID_HIERARCHICALREFERENCES}};
+const UA_NodeId UA_RelativPathElement::HierarchicalReferences = UA_NODEID_NUMERIC(0,UA_NS0ID_HIERARCHICALREFERENCES);
 
 UA_RelativPathElement::~UA_RelativPathElement()
 {
