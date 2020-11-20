@@ -89,17 +89,3 @@ install(FILES "${CMAKE_CURRENT_BINARY_DIR}/cmake/Open62541CppConfig.cmake"
 		DESTINATION "${cmake_configfile_install}")
 
 
-# Modify default MSVC options of CMake
-if(MSVC)
-	set(CompilerFlags
-			CMAKE_CXX_FLAGS
-			CMAKE_CXX_FLAGS_DEBUG
-			CMAKE_CXX_FLAGS_RELEASE
-			CMAKE_C_FLAGS
-			CMAKE_C_FLAGS_DEBUG
-			CMAKE_C_FLAGS_RELEASE
-			)
-	foreach(CompilerFlag ${CompilerFlags})
-	  string(REPLACE "/MD" "/MT" ${CompilerFlag} "${${CompilerFlag}}")
-	endforeach()
-endif(MSVC)
