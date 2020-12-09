@@ -41,7 +41,7 @@ namespace open62541Cpp
 	UA_Variant::~UA_Variant()
 	{
 		///TODO ? How does this behave when no members are reserved?
-		UA_Variant_deleteMembers(Variant);
+		UA_Variant_clear(Variant);
 		UA_Variant_delete(Variant);
 	}
 

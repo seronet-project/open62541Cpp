@@ -50,7 +50,7 @@ namespace open62541Cpp
 
 	UA_DataValue::~UA_DataValue()
 	{
-		UA_DataValue_deleteMembers(DataValue);
+		UA_DataValue_clear(DataValue);
 		UA_DataValue_delete(DataValue);
 	}
 

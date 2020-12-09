@@ -16,7 +16,7 @@ UA_RelativPathElement::~UA_RelativPathElement()
 {
   if (RelativePathElement != nullptr)
   {
-    UA_RelativePathElement_deleteMembers(RelativePathElement);
+    UA_RelativePathElement_clear(RelativePathElement);
     UA_RelativePathElement_delete(RelativePathElement);
   }
 }

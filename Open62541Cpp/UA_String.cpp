@@ -40,7 +40,7 @@ UA_String::UA_String(const UA_String &other) : UA_String(other.String) {
 }
 
 UA_String::~UA_String() {
-  UA_String_deleteMembers(String);
+  UA_String_clear(String);
   UA_String_delete(String);
 }
 

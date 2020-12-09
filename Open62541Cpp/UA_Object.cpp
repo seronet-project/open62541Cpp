@@ -40,7 +40,7 @@ namespace open62541Cpp
 
 	UA_Object::~UA_Object()
 	{
-		UA_ObjectAttributes_deleteMembers(Attributes);
+		UA_ObjectAttributes_clear(Attributes);
 		UA_ObjectAttributes_delete(Attributes);
 	}
 

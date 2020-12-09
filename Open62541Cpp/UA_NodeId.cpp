@@ -82,7 +82,7 @@ bool UA_NodeId::operator ==(const UA_NodeId &other) const {
 UA_NodeId::~UA_NodeId() {
   if(NodeId != nullptr)
   {
-    UA_NodeId_deleteMembers(NodeId);
+    UA_NodeId_clear(NodeId);
     UA_NodeId_delete(NodeId);
   }
 }
@@ -90,7 +90,7 @@ UA_NodeId::operator std::string() const {
   UA_String strNodeId = UA_STRING_NULL;
   UA_NodeId_print(NodeId, &strNodeId);
   std::string ret (strNodeId.data, strNodeId.data + strNodeId.length);
-  UA_String_deleteMembers(&strNodeId);
+  UA_String_clear(&strNodeId);
   return ret;
 }
 

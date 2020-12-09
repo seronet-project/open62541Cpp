@@ -39,7 +39,7 @@ namespace open62541Cpp {
 
 	UA_Variable::~UA_Variable()
 	{
-		UA_VariableAttributes_deleteMembers(Attributes);
+		UA_VariableAttributes_clear(Attributes);
 		UA_VariableAttributes_delete(Attributes);
 	}
 

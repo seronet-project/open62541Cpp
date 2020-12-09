@@ -55,15 +55,15 @@ namespace open62541Cpp
 
 	UA_Method::~UA_Method()
 	{
-		UA_MethodAttributes_deleteMembers(Attributes);
+		UA_MethodAttributes_clear(Attributes);
 		UA_MethodAttributes_delete(Attributes);
 
 		for (::UA_Argument arg : InputArguments) {
-			UA_Argument_deleteMembers(&arg);
+			UA_Argument_clear(&arg);
 		}
 		
 		for (::UA_Argument arg : OutputArguments) {
-			UA_Argument_deleteMembers(&arg);
+			UA_Argument_clear(&arg);
 		}
 	}
 }

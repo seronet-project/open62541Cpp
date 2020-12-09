@@ -35,7 +35,7 @@ UA_Argument::UA_Argument(const UA_Argument &other) : UA_Argument(other.argument)
 
 UA_Argument::~UA_Argument() {
   ///TODO ? How does this behave when no members are reserved?
-  UA_Argument_deleteMembers(argument);
+  UA_Argument_clear(argument);
   UA_Argument_delete(argument);
 }
 }

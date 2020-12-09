@@ -15,7 +15,7 @@ namespace open62541Cpp {
 
 UA_BrowsePath::~UA_BrowsePath() {
   if (BrowsePath != nullptr) {
-    UA_BrowsePath_deleteMembers(BrowsePath);
+    UA_BrowsePath_clear(BrowsePath);
     UA_BrowsePath_delete(BrowsePath);
   }
 }
