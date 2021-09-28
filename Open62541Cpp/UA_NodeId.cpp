@@ -36,6 +36,12 @@ UA_NodeId::UA_NodeId(const UA_UInt16 nsIndex, const UA_UInt32 identifier) : UA_N
   NodeId->identifier.numeric = identifier;
 }
 
+UA_NodeId::UA_NodeId(const UA_UInt16 nsIndex, const UA_Guid identifier) : UA_NodeId() {
+  NodeId->identifierType = UA_NODEIDTYPE_GUID;
+  NodeId->namespaceIndex = nsIndex;
+  NodeId->identifier.guid = identifier;
+}
+
 UA_NodeId::UA_NodeId(::UA_NodeId *nodeId, bool takeOwnership) {
   if (takeOwnership) {
     NodeId = nodeId;

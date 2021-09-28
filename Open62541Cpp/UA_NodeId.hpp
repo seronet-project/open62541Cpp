@@ -23,7 +23,7 @@ class UA_NodeId {
   UA_NodeId(::UA_NodeId *nodeId, bool takeOwnership);
   UA_NodeId(UA_UInt16 nsIndex, std::string identifier);
   UA_NodeId(UA_UInt16 nsIndex, UA_UInt32 identifier);
-
+  UA_NodeId(UA_UInt16 nsIndex, UA_Guid identifier);
   static UA_NodeId FromConstNodeId(const ::UA_NodeId *nodeId);
 
   /// Do a copy
