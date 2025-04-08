@@ -12,25 +12,6 @@ namespace open62541Cpp
 {
 const UA_NodeId UA_RelativPathElement::HierarchicalReferences = UA_NODEID_NUMERIC(0,UA_NS0ID_HIERARCHICALREFERENCES);
 
-// UA_RelativPathElement::~UA_RelativPathElement()
-// {
-//   if (RelativePathElement != nullptr)
-//   {
-//     UA_RelativePathElement_clear(RelativePathElement);
-//     UA_RelativePathElement_delete(RelativePathElement);
-//     //RelativePathElement = nullptr; //set to nullptr?
-//   }
-// }
-
-// UA_RelativPathElement::UA_RelativPathElement(const UA_RelativPathElement &other)
-// {
-//   if(other.RelativePathElement != nullptr)
-//   {
-//     RelativePathElement = UA_RelativePathElement_new();
-//     UA_RelativePathElement_copy(other.RelativePathElement, RelativePathElement);
-//   }
-// }
-
 UA_RelativPathElement::~UA_RelativPathElement()
 {
   if (RelativePathElement != nullptr)
@@ -69,7 +50,6 @@ UA_RelativPathElement& UA_RelativPathElement::operator=(const UA_RelativPathElem
 
   return *this;
 }
-
 
 UA_RelativPathElement::UA_RelativPathElement(
     UA_UInt16 nsIndex,
