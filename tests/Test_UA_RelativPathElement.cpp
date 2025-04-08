@@ -47,9 +47,14 @@ TEST(RelativPathElement, AssignNullToNotNull)
     obj1 = obj2;
 }
 
-TEST(RelativPathElement, MemoryLeakTest)
+TEST(RelativPathElement, SelfAssignNotNull)
 {
-    char* str = new char[30];
-    str = new char[60];
-    delete[] str;
+    open62541Cpp::UA_RelativPathElement obj1(1, "test");
+    obj1 = obj1;
+}
+
+TEST(RelativPathElement, SelfAssignNull)
+{
+    open62541Cpp::UA_RelativPathElement obj1;
+    obj1 = obj1;
 }
