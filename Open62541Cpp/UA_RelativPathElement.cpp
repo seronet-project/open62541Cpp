@@ -34,20 +34,26 @@ UA_RelativPathElement& UA_RelativPathElement::operator=(const UA_RelativPathElem
 {
   if (this != &other) // Prevent self-assignment
   {
-    if (RelativePathElement != nullptr)
-    {
-      UA_RelativePathElement_clear(RelativePathElement);
-      UA_RelativePathElement_delete(RelativePathElement);
-      RelativePathElement = nullptr;
-    }
-
-    if (other.RelativePathElement != nullptr)
-    {
-      RelativePathElement = UA_RelativePathElement_new();
-      UA_RelativePathElement_copy(other.RelativePathElement, RelativePathElement);
-    }
+    return *this;
   }
 
+  if (RelativePathElement != nullptr)
+  {
+    UA_RelativePathElement_clear(RelativePathElement);
+  }
+
+  if (other.RelativePathElement != nullptr)
+  {
+    if(RelativePathElement == nullptr)
+    {
+      RelativePathElement = UA_RelativePathElement_new();
+    }
+    UA_RelativePathElement_copy(other.RelativePathElement, RelativePathElement);
+  }else if(RelativePathElement != nullptr)
+  {
+    UA_RelativePathElement_delete(RelativePathElement);
+    RelativePathElement = nullptr;
+  }
   return *this;
 }
 
