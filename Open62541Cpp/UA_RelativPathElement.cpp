@@ -40,8 +40,6 @@ UA_RelativPathElement& UA_RelativPathElement::operator=(const UA_RelativPathElem
   if (RelativePathElement != nullptr)
   {
     UA_RelativePathElement_clear(RelativePathElement);
-    UA_RelativePathElement_delete(RelativePathElement);
-    RelativePathElement = nullptr;
   }
 
   if (other.RelativePathElement != nullptr)
