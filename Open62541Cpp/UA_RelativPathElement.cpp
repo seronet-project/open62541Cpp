@@ -32,7 +32,7 @@ UA_RelativPathElement::UA_RelativPathElement(const UA_RelativPathElement &other)
 
 UA_RelativPathElement& UA_RelativPathElement::operator=(const UA_RelativPathElement& other)
 {
-  if (this != &other) // Prevent self-assignment
+  if (this == &other) // Prevent self-assignment
   {
     return *this;
   }
@@ -40,6 +40,8 @@ UA_RelativPathElement& UA_RelativPathElement::operator=(const UA_RelativPathElem
   if (RelativePathElement != nullptr)
   {
     UA_RelativePathElement_clear(RelativePathElement);
+    UA_RelativePathElement_delete(RelativePathElement);
+    RelativePathElement = nullptr;
   }
 
   if (other.RelativePathElement != nullptr)
